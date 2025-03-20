@@ -11,10 +11,26 @@
     <div id="app">
         <h1>你好，{{ name }}</h1>
         <a :href="link" target="_blank">Giselle's GitHub</a>
-
+        
         <ul>
             <li v-for="(todo,index) in todos">{{index+1}} {{ todo }}</li>
         </ul>
+        <!-- 判斷式 -->
+         <p v-if="books.length === 0">目前沒有任何書籍</p>
+         <h2 v-else-if="books.length === 1">{{ books[0] }}</h2>
+         <ul v-else>
+            <li v-for="book in books">{{ book }}</li>
+         </ul>
+         <!-- 隱藏式收合問答 -->
+          <div class="question">
+            <p>問：用 Vue 的時候應該選擇 JS 還是 TS？</p>
+            <p v-show="showAnswer" class="answer">
+                答：雖然 Vue 本身是用 TypeScript 實現的，並提供一流的 TypeScript 支持，但它並不強制要求用戶使用 TypeScript。
+                在向 Vue 添加新特性時，對 TypeScript 的支持是一個重要的考慮因素。即使你自己不使用 TypeScript，考慮了 TypeScript 支持的 API 設計也通常更容易被 IDE 和靜態分析工具分析，因此這對大家都有好處。Vue 的 API 設計也儘可能在 JavaScript 和 TypeScript 中以相同的方式工作。
+                選用 TypeScript 會涉及在上手複雜性和長期可維護性收益之間作出權衡。這種權衡是否合理取決於你的團隊背景和項目規模，但 Vue 並不會真正成為影響這一決定的因素。
+            </p>
+            <button @click="toggleAnswer">{{ label }}</button>
+          </div>
     </div>
     <script src="all02.js"></script>
 </body>

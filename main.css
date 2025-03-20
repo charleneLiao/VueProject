@@ -56,3 +56,19 @@ body {
   color: #5023f2;
   line-height: 1.5em;
 }
+.question{
+  .answer{
+    width: 620px;
+  }
+  button{
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #5023f2;
+    color: #fff;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    border: 1px solid #833adb;
+  }
+}
