@@ -11,6 +11,10 @@
     <div id="app">
         <h1>你好，{{ name }}</h1>
         <a :href="link" target="_blank">Giselle's GitHub</a>
+
+        <ul>
+            <li v-for="(todo,index) in todos">{{index+1}} {{ todo }}</li>
+        </ul>
     </div>
     <script src="all02.js"></script>
 </body>
